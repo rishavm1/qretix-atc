@@ -1,0 +1,36 @@
+# ── Already available in environment ──────────────────────────────────────────
+# pandas, numpy, scikit-learn, scipy, requests, networkx, matplotlib, torch
+
+# ── GEO / scRNA-seq ────────────────────────────────────────────────────────────
+GEOparse>=2.0.4
+scanpy>=1.10
+anndata>=0.10
+leidenalg>=0.10
+# scrublet>=0.2.3  — BLOCKED: requires annoy which needs MSVC build tools on Windows.
+#                   Doublet detection will use scanpy's built-in score_genes approach
+#                   or a pure-Python heuristic. Logged in decisions_log.md.
+
+# ── Differential expression ────────────────────────────────────────────────────
+pydeseq2>=0.4
+
+# ── Gene set / GO analysis ─────────────────────────────────────────────────────
+gseapy>=1.1
+goatools>=1.4
+
+# ── Bio utilities ──────────────────────────────────────────────────────────────
+biopython>=1.83
+
+# ── Gradient boosting ──────────────────────────────────────────────────────────
+xgboost>=2.0
+lightgbm>=4.0
+catboost>=1.2
+
+# ── GNN ────────────────────────────────────────────────────────────────────────
+torch-geometric>=2.5
+
+# ── Data I/O ───────────────────────────────────────────────────────────────────
+pyarrow>=14.0
+
+# ── Utilities ──────────────────────────────────────────────────────────────────
+tqdm>=4.66
+seaborn>=0.13

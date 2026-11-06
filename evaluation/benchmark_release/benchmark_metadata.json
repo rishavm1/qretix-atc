@@ -1,0 +1,68 @@
+{
+  "benchmark_name": "QRETIX-ATC: Anaplastic Thyroid Cancer Target Prioritisation Benchmark",
+  "version": "v0.1",
+  "disease": "Anaplastic Thyroid Cancer (ATC)",
+  "task": "Gene target prioritisation",
+  "category": "None",
+  "maintainer": "rishavm1",
+  "github_repository": "rishavm1/qretix-atc",
+  "paper_url": "",
+  "generated_at": "2026-11-06T12:34:54.790348+00:00",
+  "q3dc": {
+    "benchmark_name": "QRETIX-ATC: Anaplastic Thyroid Cancer Target Prioritisation Benchmark",
+    "category": "None",
+    "maintainer_or_lead_author": "rishavm1",
+    "github_repository": "rishavm1/qretix-atc",
+    "paper_or_project_url": "",
+    "what_it_measures": "Ranks all human protein-coding genes (~19k) as candidate therapeutic targets for Anaplastic Thyroid Cancer (ATC) using a multimodal evidence framework (transcriptomics, CRISPR dependency, genomics, literature, PPI). Unlike existing cancer target benchmarks, it enforces strict temporal retrospective validation across four cutoff years (2015\u20132021) and decomposes scores into three non-merged axes: biology, therapeutic feasibility, and novelty.",
+    "tasks": "Target ranking, Precision@K recovery, Temporal prospective validation, Novelty scoring",
+    "known_caveat": "Ground-truth labels are derived from PubMed NLP + Open Targets + ClinicalTrials.gov and inherit their publication bias: well-studied cancer genes (TP53, BRAF, KRAS) are over-represented as positives regardless of ATC-specific evidence strength. COSMIC and DisGeNET were unavailable (license/registration required), so driver annotation relies on Open Targets and curated literature lists. The DepMap-only baseline achieves AUPRC=0.92 because essential housekeeping genes co-segregate with ATC dependency \u2014 this is a known confound documented in the leakage audit.",
+    "live_leaderboard_url": "",
+    "submission_evaluation_url": ""
+  },
+  "dataset_stats": {
+    "gene_universe_size": 41217,
+    "n_positives_stage_ge2": 1075,
+    "n_holdout_genes": 268,
+    "positive_fraction_pct": 2.61,
+    "label_sources": [
+      "PubMed E-utilities (ATC corpus)",
+      "Open Targets (ATC associations)",
+      "ClinicalTrials.gov API v2",
+      "DepMap CRISPR Chronos (7 authenticated ATC lines)"
+    ],
+    "temporal_splits": [
+      2015,
+      2017,
+      2019,
+      2021
+    ]
+  },
+  "baseline_metrics": {
+    "DE-only": {
+      "AUPRC": 0.0644,
+      "P@50": 0.06,
+      "NDCG@50": 0.0549
+    },
+    "DepMap-only": {
+      "AUPRC": 0.9157,
+      "P@50": 1.0,
+      "NDCG@50": 1.0
+    },
+    "Open Targets": {
+      "AUPRC": 0.1024,
+      "P@50": 0.88,
+      "NDCG@50": 0.9158
+    },
+    "Network centrality": {
+      "AUPRC": 0.3083,
+      "P@50": 0.42,
+      "NDCG@50": 0.4966
+    },
+    "QRETIX": {
+      "AUPRC": 0.8847,
+      "P@50": 1.0,
+      "NDCG@50": 1.0
+    }
+  }
+}

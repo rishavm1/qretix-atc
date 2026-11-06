@@ -1,0 +1,27 @@
+# Credentials — never commit
+configs/api_keys.json
+
+# Large raw data downloads
+data/raw/
+data/processed/*.h5ad
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Parquet files (large, regenerable) — exclude most
+*.parquet
+
+# Benchmark release — public files ARE committed, holdout files are NOT
+!evaluation/benchmark_release/ground_truth.parquet
+evaluation/benchmark_release/holdout_ground_truth.parquet
+evaluation/benchmark_release/holdout_genes.txt
+
+# Models (large binaries)
+models/
+catboost_info/
+
+# Jupyter
+.ipynb_checkpoints/
