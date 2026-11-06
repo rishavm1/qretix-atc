@@ -1,4 +1,4 @@
-# QRETIX-ATC v0.1
+# QRETIX-ATC 
 
 **Anaplastic Thyroid Cancer (ATC) Therapeutic Target Prioritisation Benchmark**
 
